@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
+// Cambio de tipografia base
+
+$font-family-base: 'Dosis', sans-serif;
+
+/* modificando colores básicos */
+
+$primary: #B7950B;
+$secondary: #229954;
+// Nuevas variantes de color 
+$dani: gray;
+$titulo: white;
+
+/* modificando colores theme */
+
+$theme-colors: (
+
+    "primary": $primary,
+    "secondary": $secondary,
+    // Integrando nuevas variantes de color en el theme
+    "dani": $dani,
+    "titulo": $titulo,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Clases fantasmas
+
+.daniStyle {
+    text-align: center;
+    font-size: large;
+    color: $dani;
+    background-color: $titulo;
+    height: 35px;
+}
+
+.card-position{
+    margin: auto;
+    background-color: $dani;
+}
+
+// Utilizando el @extend
+
+.card-title {
+     @extend .daniStyle;
+}
+
+.card{
+    @extend .card-position;
+}
